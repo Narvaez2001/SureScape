@@ -11,7 +11,7 @@ body {
 }
 
 .sure-navbar {
-    background-color: #333;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     width: 100%;
@@ -29,6 +29,11 @@ body {
     padding: 0 20px;
 }
 
+.nav-container img{
+    width: 80px;
+    height: 80px;
+}
+
 .logo {
     font-size: 24px;
     color: white;
@@ -38,7 +43,10 @@ body {
 
 .nav-links {
     display: flex;
+    padding: 0;
+    margin: 0;
 }
+
 
 .nav-links li {
     list-style: none;
@@ -46,7 +54,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 20px;
     display: block;
     font-size: 16px;
@@ -54,13 +62,10 @@ body {
     font-weight: 500;
 }
 
-.nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
+
 
 .menu-icon {
-  
+    
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -74,8 +79,11 @@ body {
 
 .menu-icon-bar {
     width: 100%;
-    height: 3px;
-    background-color: white;
+    border-radius:16px ;
+    height: 4px;
+    background: linear-gradient(90deg,
+    rgba(89, 211, 252, 1)0%,
+    rgba(85, 77, 222, 1)70%);
     margin: 4px 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -88,11 +96,11 @@ body {
     transform-origin: bottom left;
 }
 
-.menu-icon.open .menu-icon-bar:first-child {
+.menu-icon.open .menu-icon-bar:nth-child(1) {
     transform: rotate(45deg);
 }
 
-.menu-icon.open .menu-icon-bar:last-child {
+.menu-icon.open .menu-icon-bar:nth-child(2) {
     transform: rotate(-45deg);
 }
 
@@ -103,7 +111,7 @@ body {
     left: 0;
     width: 100%;
     height: calc(100% - 80px);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: white;
     z-index: 10;
     flex-direction: column;
     justify-content: center;
@@ -123,12 +131,32 @@ body {
 .mobile-menu li {
     margin: 20px 0;
 }
-
 .mobile-menu a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 24px;
     font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.mobile-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+    rgba(89, 211, 252, 1)0%,
+    rgba(85, 77, 222, 1)70%);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.mobile-menu a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .mobile-menu.active {
@@ -138,6 +166,7 @@ body {
 }
 
 @media (max-width: 768px) {
+    
     .nav-container {
         justify-content: space-between;
     }
@@ -166,6 +195,7 @@ body {
 }
 
 @media(max-width:768px){
+    
     .d-item {
         height: 300px;
     }
