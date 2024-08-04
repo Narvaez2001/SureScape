@@ -60,6 +60,7 @@ body {
 }
 
 .menu-icon {
+  
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -114,6 +115,8 @@ body {
 }
 
 .mobile-menu ul {
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
