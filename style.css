@@ -45,6 +45,7 @@ body {
 }
 
 .nav-links a {
+    text-decoration: none;
     color: white;
     padding: 20px;
     display: block;
@@ -121,6 +122,7 @@ body {
 }
 
 .mobile-menu a {
+    text-decoration: none;
     color: white;
     font-size: 24px;
     font-weight: 500;
@@ -146,6 +148,28 @@ body {
     }
 }
 
-.carrusel{
-    margin-top: 87px;
+.carrusel {
+    margin-top: 79px;
+}
+
+.d-item {
+    height: 570px;
+}
+
+.d-img {
+    height: 570px;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+@media(max-width:768px){
+    .d-item {
+        height: 300px;
+    }
+    
+    .d-img {
+        height: 300px;
+        object-fit: cover;
+        filter: brightness(0.6);
+    }
 }
